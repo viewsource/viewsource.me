@@ -1,0 +1,40 @@
+/*
+body {
+	overflow: hidden;
+}
+*/
+#read-content {
+	padding: 0px;
+}
+
+#editor { 
+	margin: 0;
+	position: relative;
+	width: 100%;
+	height: 1em;
+	text-shadow: none;
+}
+
+.ui-body-c .ui-title .ui-link,
+.ui-dialog .ui-title .ui-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+label.ui-select {
+	width: 100%;
+	margin-left: 0.25em;
+}
+
+.ui-select,
+input.ui-input-text {
+	width: 100%;
+}
+
+td.ui-input-text-wrapper {
+	padding: 0 20px 0 6px;
+}
+
+#github-controls {
+	padding: 0 0 23px 0;
+}

@@ -1,73 +1,579 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>ViewSource.me | Read Code to Learn Code.</title>
+	<meta name="description" content="Read Code to Learn Code.">
+	<meta name="author" content="Chris Jacob">
+	
+	<!--
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.css" />
+	-->
+	<link rel="stylesheet" href="_assets/jquery.mobile-1.0b1/jquery.mobile-1.0b1.css" />
+	<link rel="stylesheet" href="_assets/css/style.css" />
+	
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+	<script>window.jQuery || document.write('<script src="_assets/js/libs/jquery-1.6.2.js"><\/script>')</script>
 
-  <title>viewsource/viewsource.me @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #ffffff;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #000000; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #000000; }
-    h3 { text-align: center; color: #000000; }
-    a { color: #000000; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<!--
+	<script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.js"></script>
+	-->
+	<script src="_assets/jquery.mobile-1.0b1/jquery.mobile-1.0b1.js"></script>
 </head>
 
 <body>
-  <a href="http://github.com/viewsource/viewsource.me"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	HOME
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="home">
+		<div data-role="header">
+			<a href="#options" data-transition="slideup" data-icon="gear" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-transition="slideup">Home</a></h1>
+			<a href="#share" data-transition="slideup" data-icon="star" data-iconpos="notext" class="ui-btn-right"></a>
+			<div data-role="navbar" data-id="vs_nav">
+				<ul>
+					<li><a href="#find" data-transition="fade">Find</a></li>
+					<li><a href="#read" data-transition="fade">Read</a></li>
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- /header -->
 
-  <div id="container">
+		<div data-role="content">	
+			<h2>ViewSource.me</h2>
+			<p>Read Code to Learn Code</p>
+			
+		</div><!-- /content -->
 
-    <div class="download">
-      <a href="http://github.com/viewsource/viewsource.me/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/viewsource/viewsource.me/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+		<div data-role="footer" data-id="vs_ads" data-position="fixed">
+			<h4>Ads Go Here</h4>
+		</div><!-- /footer -->
+	</div><!-- /#home -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	OPTIONS
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="options">
+		<div data-role="header">
+			<a href="#home" data-rel="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-transition="slideup">Options</a></h1>
+		</div><!-- /header -->
 
-    <h1><a href="http://github.com/viewsource/viewsource.me">viewsource.me</a>
-      <span class="small">by <a href="http://github.com/viewsource">viewsource</a></span></h1>
+		<div data-role="content">
+			<table id="controls" width="100%">
+				<tr>
+					<td>
+						<label for="doc">Document</label>
+					</td>
+					<td>
+						<select id="doc" size="1">
+							<option value="js">JavaScript</option>
+							<option value="plain">Plain Text</option>
+							<option value="svg">SVG</option>
+							<option value="html">HTML</option>
+							<option value="css">CSS</option>
+							<option value="scss">SCSS</option>
+							<option value="coffee">CoffeeScript</option>
+							<option value="json">JSON</option>
+							<option value="python">Python</option>
+							<option value="ruby">Ruby</option>
+							<option value="perl">Perl</option>
+							<option value="php">PHP</option>
+							<option value="java">Java</option>
+							<option value="csharp">C#</option>
+							<option value="c_cpp">C++</option>
+							<option value="svg">SVG</option>
+							<option value="clojure">Clojure</option>
+							<option value="ocaml">OCaml</option>
+							<option value="textile">Textile</option>
+							<option value="groovy">Groovy</option>
+							<option value="scala">Scala</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="mode">Mode</label>
+					</td>
+					<td>
+						<select id="mode" size="1">
+							<option value="text">Plain Text</option>
+							<option value="javascript">JavaScript</option>
+							<option value="xml">XML</option>
+							<option value="html">HTML</option>
+							<option value="css">CSS</option>
+							<option value="scss">SCSS</option>
+							<option value="python">Python</option>
+							<option value="php">PHP</option>
+							<option value="java">Java</option>
+							<option value="ruby">Ruby</option>
+							<option value="c_cpp">C/C++</option>
+							<option value="coffee">CoffeeScript</option>
+							<option value="json">JSON</option>
+							<option value="perl">Perl</option>
+							<option value="clojure">Clojure</option>
+							<option value="ocaml">OCaml</option>
+							<option value="csharp">C-Sharp</option>
+							<option value="svg">SVG</option>
+							<option value="textile">Textile</option>
+							<option value="groovy">Groovy</option>
+							<option value="scala">Scala</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="split">Split</label>
+					</td>
+					<td>
+						<select id="split" size="1">
+							<option value="none">None</option>
+							<option value="below">Below</option>
+							<option value="beside">Beside</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="theme">Theme</label>
+					</td>
+					<td>
+						<select id="theme" size="1">
+							<option value="ace/theme/textmate">TextMate</option>
+							<option value="ace/theme/eclipse">Eclipse</option>
+							<option value="ace/theme/dawn">Dawn</option>
+							<option value="ace/theme/idle_fingers">idleFingers</option>
+							<option value="ace/theme/pastel_on_dark">Pastel on dark</option>
+							<option value="ace/theme/twilight">Twilight</option>
+							<option value="ace/theme/clouds">Clouds</option>
+							<option value="ace/theme/clouds_midnight">Clouds Midnight</option>
+							<option value="ace/theme/kr_theme">krTheme</option>
+							<option value="ace/theme/mono_industrial">Mono Industrial</option>
+							<option value="ace/theme/monokai">Monokai</option>
+							<option value="ace/theme/merbivore">Merbivore</option>
+							<option value="ace/theme/merbivore_soft">Merbivore Soft</option>
+							<option value="ace/theme/vibrant_ink">Vibrant Ink</option>
+							<option value="ace/theme/solarized_dark">Solarized Dark</option>
+							<option value="ace/theme/solarized_light">Solarized Light</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="fontsize">Font Size</label>
+					</td>
+					<td>
+						<select id="fontsize" size="1">
+							<option value="10px">10px</option>
+							<option value="11px">11px</option>
+							<option value="12px" selected="selected">12px</option>
+							<option value="14px">14px</option>
+							<option value="16px">16px</option>
+							<option value="20px">20px</option>
+							<option value="24px">24px</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="keybinding">Key Binding</label>
+					</td>
+					<td>
+						<select id="keybinding" size="1">
+							<option value="ace">Ace</option>
+							<option value="vim">Vim</option>
+							<option value="emacs">Emacs</option>
+							<option value="custom">Custom</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="soft_wrap">Soft Wrap</label>
+					</td>
+					<td>
+						<select id="soft_wrap" size="1">
+							<option value="off">Off</option>
+							<option value="40">40 Chars</option>
+							<option value="80">80 Chars</option>
+							<option value="free">Free</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="select_style">Full Line Selection</label>
+					</td>
+					<td>
+						<input type="checkbox" name="select_style" id="select_style" checked>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="highlight_active">Highlight Active Line</label>
+					</td>
+					<td>
+						<input type="checkbox" name="highlight_active" id="highlight_active" checked>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="show_hidden">Show Invisibles</label>
+					</td>
+					<td>
+						<input type="checkbox" name="show_hidden" id="show_hidden" checked>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="show_hscroll">Persistent HScroll</label>
+					</td>
+					<td>
+						<input type="checkbox" name="show_hscroll" id="show_hscroll">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="show_gutter">Show Gutter</label>
+					</td>
+					<td>
+						<input type="checkbox" name="show_gutter" id="show_gutter" checked>
+					</td>
+				</tr>				
+				<tr>
+					<td colspan="2">
+						<label for="show_print_margin">Show Print Margin</label>
+					</td>
+					<td>
+						<input type="checkbox" name="show_print_margin" id="show_print_margin" checked>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="soft_tab">Use Soft Tab</label>
+					</td>
+					<td>
+						<input type="checkbox" name="soft_tab" id="soft_tab" checked>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="highlight_selected_word">Highlight selected word</label>
+					</td>
+					<td>
+						<input type="checkbox" name="highlight_selected_word" id="highlight_selected_word" checked>
+					</td>
+				</tr>
+			</table>
+		</div><!-- /content -->
 
-    <div class="description">
-      Read Code to Learn Code.
-    </div>
+		<div data-role="footer" data-id="vs_ads" data-position="fixed">
+			<h4>Ads Go Here</h4>
+		</div><!-- /footer -->
+	</div><!-- /#options -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	HISTORY
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="history">
+		<div data-role="header">
+			<a href="#home" data-rel="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-rel="back">History</a></h1>
+		</div><!-- /header -->
 
-    
+		<div data-role="content">	
+			<ul data-role="listview" data-split-icon="info" data-split-theme="d" data-filter="true">
+				<li>
+					<a href="index.html">jquery.mobile.css</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">jquery.mobile.js</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">images/ajax-loader.png</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">README.md</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">.gitignore</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">humans.txt</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">package.json</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">custom.js</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+			</ul>	
+		</div><!-- /content -->
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/viewsource/viewsource.me/zipball/master">zip</a> or
-      <a href="http://github.com/viewsource/viewsource.me/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/viewsource/viewsource.me</pre>
-    </p>
+		<div data-role="footer" data-id="vs_ads" data-position="fixed">
+			<h4>Ads Go Here</h4>
+		</div><!-- /footer -->
+	</div><!-- /#history -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	INFO
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="info">
+		<div data-role="header">
+			<h1><a href="#history" data-rel="back">Info</a></h1>
+		</div><!-- /header -->
+		
+		<div data-role="content">	
+			<p>File Info Goes Here</p>
+		</div><!-- /content -->
+	</div><!-- /#info -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	SHARE
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="share">
+		<div data-role="header">
+			<a href="#home" data-rel="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-transition="slideup">Share</a></h1>
+		</div><!-- /header -->
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/viewsource/viewsource.me">viewsource/viewsource.me</a>
-    </div>
+		<div data-role="content">	
+			<ul data-role="listview" data-filter="true">
+				<li>
+					<a href="index.html">Twitter</a>
+				</li>
+				<li>
+					<a href="index.html">Facebook</a>
+				</li>
+				<li>
+					<a href="index.html">Email</a>
+				</li>
+				<li>
+					<a href="index.html">Hacker News</a>
+				</li>
+				<li>
+					<a href="index.html">Forrst</a>
+				</li>
+				<li>
+					<a href="index.html">Delicious</a>
+				</li>
+				<li>
+					<a href="index.html">Bookmark</a>
+				</li>
+				<li>
+					<a href="index.html">+1</a>
+				</li>
+			</ul>	
+		</div><!-- /content -->
 
-  </div>
+		<div data-role="footer" data-id="vs_ads" data-position="fixed">
+			<h4>Ads Go Here</h4>
+		</div><!-- /footer -->
+	</div><!-- /#share -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	FIND
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="find">
+		<div data-role="header">
+			<a href="#options" data-transition="slideup" data-icon="gear" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-transition="slideup">Find on GitHub</a></h1>
+			<a href="#share" data-transition="slideup" data-icon="star" data-iconpos="notext" class="ui-btn-right"></a>
+			<div data-role="navbar" data-id="vs_nav">
+				<ul>
+					<li><a href="#find" data-transition="fade" class="ui-btn-active ui-state-persist">Find</a></li>
+					<li><a href="#read" data-transition="fade">Read</a></li>
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- /header -->
 
-  
+		<div data-role="content">
+			<table id="github-controls" width="100%">
+				<tr>
+					<td>
+						<label for="github-username">Username</label>
+					</td>
+					<td class="ui-input-text-wrapper">
+						<input id="github-username" value="viewsource" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="github-repository">Repository</label>
+					</td>
+					<td>
+						<select id="github-repository" size="1">
+							<option value="1">latest</option>
+							<option value="1">viewsource.github.com</option>
+							<option value="1" selected="selected">archive.jquery-mobile</option>							
+							<option value="1">archive.jquery</option>							
+							<option value="1">viewsource.me</option>							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="github-branch">Branch</label>
+					</td>
+					<td>
+						<select id="github-branch" size="1">
+							<option value="1">master</option>
+							<option value="1">gh-pages</option>							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="github-tag">Tag</label>
+					</td>
+					<td>
+						<select id="github-tag" size="1">
+							<option value="1">v1.0b1.0</option>
+							<option value="1">v1.0a4.1</option>
+							<option value="1">v1.0a4.0</option>
+							<option value="1">v1.0a3.0</option>
+							<option value="1">v1.0a2.0</option>
+							<option value="1">v1.0a1.0</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<ul data-role="listview" data-split-icon="info" data-split-theme="d" data-filter="true">
+				<li>
+					<a href="index.html">jquery.mobile.css</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">jquery.mobile.js</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">images/ajax-loader.png</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">README.md</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">.gitignore</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">humans.txt</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">package.json</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+				<li>
+					<a href="index.html">custom.js</a>
+					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+			</ul>	
+		</div><!-- /content -->
+
+		<div data-role="footer" data-id="vs_ads" data-position="fixed">
+			<h4>Ads Go Here</h4>
+		</div><!-- /footer -->
+	</div><!-- /#find -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	READ
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="read">
+		<div data-role="header" id="read-header">
+			<a href="#options" data-transition="slideup" data-icon="gear" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-transition="slideup">Read</a></h1>
+			<a href="#share" data-transition="slideup" data-icon="star" data-iconpos="notext" class="ui-btn-right"></a>
+			<div data-role="navbar" data-id="vs_nav">
+				<ul>
+					<li><a href="#find" data-transition="fade">Find</a></li>
+					<li><a href="#read" data-transition="fade" class="ui-btn-active ui-state-persist">Read</a></li>
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- /header -->
+
+		<div data-role="content" id="read-content">	
+<pre id="editor">function foo(items) {
+    var i;
+    for (i = 0; i &lt; items.length; i++) {
+        alert("Ace Rocks " + items[i]);
+    }
+}
+
+function bar(items) {
+	var i;
+	for (i = 0; i &lt; items.length; i++) {
+		alert("Ace Rocks " + items[i]);
+	}
+}
+
+function foo(items) {
+	var i;
+	for (i = 0; i &lt; items.length; i++) {
+		alert("Ace Rocks yeeeeeeeeeeeeeeeeeees iiiiiiiiiiiiiiiiiiiiiiit dooooooooooooooooooooooooooes " + items[i]);
+	}
+}
+
+function foo(items) {
+	var i;
+	for (i = 0; i &lt; items.length; i++) {
+		alert("Ace Rocks " + items[i]);
+	}
+}</pre>	
+		</div><!-- /content -->
+
+		<div data-role="footer" data-id="vs_ads" data-position="fixed" id="read-footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-icon="arrow-u"></a></li>
+					<li><a href="#" data-icon="arrow-l"></a></li>
+					<li><a href="#" data-icon="search"></a></li>
+					<li><a href="#" data-icon="arrow-r"></a></li>
+					<li><a href="#" data-icon="arrow-d"></a></li>
+				</ul>
+			</div>
+		</div><!-- /footer -->
+	</div><!-- /#read -->
+
+
+	<!-- ACE scripts -->
+	<script src="_assets/ace-0.1.6/src/ace.js"></script>
+	<script src="_assets/ace-0.1.6/src/theme-twilight.js"></script>
+	<script src="_assets/ace-0.1.6/src/mode-javascript.js"></script>
+	<!-- end ACE scripts -->
+
+	<!-- custom scripts -->
+	<script src="_assets/js/plugins.js"></script>
+	<script src="_assets/js/script.js"></script>
+	<!-- end custom scripts -->
+
 </body>
 </html>
