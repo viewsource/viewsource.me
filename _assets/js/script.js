@@ -12,6 +12,11 @@ window.onload = function() {
     
     var JavaScriptMode = require("ace/mode/javascript").Mode;
     editor.getSession().setMode(new JavaScriptMode());
+
+	// editor.setHighlightActiveLine(false);
+	// editor.setShowPrintMargin(false);
+	// editor.renderer.setHScrollBarAlwaysVisible(true);
+	// editor.setReadOnly(true);
 };
 
 $(function() {
