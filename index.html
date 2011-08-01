@@ -298,37 +298,25 @@
 		</div><!-- /header -->
 
 		<div data-role="content">	
-			<ul data-role="listview" data-split-icon="info" data-split-theme="d" data-filter="true">
+			<ul data-role="listview" data-split-icon="arrow-r" data-split-theme="d" data-filter="true">
 				<li>
-					<a href="index.html">jquery.mobile.css</a>
+					<a href="#read">jquery.mobile.css</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">jquery.mobile.js</a>
+					<a href="#read">README.md</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">images/ajax-loader.png</a>
+					<a href="#read">.gitignore</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">README.md</a>
+					<a href="#read">jquery.mobile.js</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">.gitignore</a>
-					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
-				</li>
-				<li>
-					<a href="index.html">humans.txt</a>
-					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
-				</li>
-				<li>
-					<a href="index.html">package.json</a>
-					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
-				</li>
-				<li>
-					<a href="index.html">custom.js</a>
+					<a href="#read">images/ajax-loader.png</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 			</ul>	
@@ -363,30 +351,14 @@
 
 		<div data-role="content">	
 			<ul data-role="listview" data-filter="true">
-				<li>
-					<a href="index.html">Twitter</a>
-				</li>
-				<li>
-					<a href="index.html">Facebook</a>
-				</li>
-				<li>
-					<a href="index.html">Email</a>
-				</li>
-				<li>
-					<a href="index.html">Hacker News</a>
-				</li>
-				<li>
-					<a href="index.html">Forrst</a>
-				</li>
-				<li>
-					<a href="index.html">Delicious</a>
-				</li>
-				<li>
-					<a href="index.html">Bookmark</a>
-				</li>
-				<li>
-					<a href="index.html">+1</a>
-				</li>
+				<li><a href="index.html">Twitter</a></li>
+				<li><a href="index.html">Facebook</a></li>
+				<li><a href="index.html">Email</a></li>
+				<li><a href="index.html">Hacker News</a></li>
+				<li><a href="index.html">Forrst</a></li>
+				<li><a href="index.html">Delicious</a></li>
+				<li><a href="index.html">Bookmark</a></li>
+				<li><a href="index.html">+1</a></li>
 			</ul>	
 		</div><!-- /content -->
 	</div><!-- /#share -->
@@ -413,43 +385,45 @@
 			<table id="github-controls" width="100%">
 				<tr>
 					<td>
-						<label for="github-username">Username</label>
+						<select id="github-username" size="1">
+							<option value="">Username</option>
+							<option value="1">viewsource</option>
+							<option value="1">chrisjacob</option>							
+						</select>
 					</td>
-					<td class="ui-input-text-wrapper">
-						<input id="github-username" value="viewsource" />
+					<td>
+						<a href="index.html" data-role="button" data-icon="search" data-iconpos="notext">Search</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label for="github-repository">Repository</label>
-					</td>
-					<td>
 						<select id="github-repository" size="1">
+							<option value="">Repository</option>
 							<option value="1">latest</option>
 							<option value="1">viewsource.github.com</option>
-							<option value="1" selected="selected">archive.jquery-mobile</option>							
-							<option value="1">archive.jquery</option>							
+							<option value="1">archive.jquery-mobile</option>							
+							<option value="1">archive.jquery.asdadsdadasdasdds</option>							
 							<option value="1">viewsource.me</option>							
 						</select>
 					</td>
+					<td>
+						<a href="index.html" data-role="button" data-icon="search" data-iconpos="notext">Search</a>
+					</td>
 				</tr>
 				<tr>
 					<td>
-						<label for="github-branch">Branch</label>
-					</td>
-					<td>
 						<select id="github-branch" size="1">
+							<option value="">Branch</option>
 							<option value="1">master</option>
 							<option value="1">gh-pages</option>							
 						</select>
 					</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>
-						<label for="github-tag">Tag</label>
-					</td>
-					<td>
 						<select id="github-tag" size="1">
+							<option value="">Tag</option>
 							<option value="1">v1.0b1.0</option>
 							<option value="1">v1.0a4.1</option>
 							<option value="1">v1.0a4.0</option>
@@ -458,39 +432,40 @@
 							<option value="1">v1.0a1.0</option>
 						</select>
 					</td>
+					<td></td>
 				</tr>
 			</table>
-			<ul data-role="listview" data-split-icon="info" data-split-theme="d" data-filter="true">
+			<ul data-role="listview" data-split-icon="arrow-r" data-split-theme="d"  data-filter-placeholder="Find a file..." data-filter="true">
 				<li>
-					<a href="index.html">jquery.mobile.css</a>
+					<a href="#read">jquery.mobile.css</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">jquery.mobile.js</a>
+					<a href="#read">jquery.mobile.js</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">images/ajax-loader.png</a>
+					<a href="#read">images/ajax-loader.png</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">README.md</a>
+					<a href="#read">README.md</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">.gitignore</a>
+					<a href="#read">.gitignore</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">humans.txt</a>
+					<a href="#read">humans.txt</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">package.json</a>
+					<a href="#read">package.json</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 				<li>
-					<a href="index.html">custom.js</a>
+					<a href="#read">custom.js</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
 				</li>
 			</ul>	
@@ -514,7 +489,6 @@
 				</ul>
 			</div><!-- navbar -->
 		</div><!-- /header -->
-
 		<div data-role="content" id="read-content">	
 <pre id="editor">function foo(items) {
     var i;
@@ -545,7 +519,7 @@ function foo(items) {
 }</pre>	
 		</div><!-- /content -->
 
-		<div data-role="footer" data-id="vs_ads" data-position="fixed" id="read-footer">
+		<div id="read-footer" data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#" data-icon="arrow-u"></a></li>
