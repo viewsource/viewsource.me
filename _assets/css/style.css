@@ -44,3 +44,7 @@ td.ui-input-text-wrapper {
 	margin-bottom:0.3em;
 }
 
+#home h2,
+#home h3 {
+	text-align: center;
+}
