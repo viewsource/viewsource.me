@@ -102,7 +102,7 @@
 	<div data-role="page" id="options_read">
 		<div data-role="header">
 			<a href="#home" data-rel="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left"></a>
-			<h1><a href="#history" data-transition="slideup">Options for Reading</a></h1>
+			<h1><a href="#history" data-transition="slideup">Read Options</a></h1>
 			<a href="#options_find" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">Finding</a>
 		</div><!-- /header -->
 
@@ -323,7 +323,7 @@
 	<div data-role="page" id="options_find">
 		<div data-role="header">
 			<a href="#home" data-rel="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left"></a>
-			<h1><a href="#history" data-transition="slideup">Options for Finding</a></h1>
+			<h1><a href="#history" data-transition="slideup">Find Options</a></h1>
 			<a href="#options_read" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">Reading</a>
 		</div><!-- /header -->
 
@@ -377,6 +377,32 @@
 				<li>
 					<a href="#read">images/ajax-loader.png</a>
 					<a href="#info" data-rel="dialog" data-transition="pop">File info</a>
+				</li>
+			</ul>	
+		</div><!-- /content -->
+	</div><!-- /#history -->
+	
+	<!--
+	|||||||||||||||||||||||||||||||||||||
+	SEARCH GITHUB
+	|||||||||||||||||||||||||||||||||||||
+	-->
+	<div data-role="page" id="search_github">
+		<div data-role="header">
+			<a href="#home" data-rel="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left"></a>
+			<h1><a href="#history" data-rel="back">Search GitHub</a></h1>
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			<ul data-role="listview" data-filter-placeholder="Find User/Repo on GitHub..." data-filter="true">
+				<li>
+					<a href="#find">jquery/jquery</a>
+				</li>
+				<li>
+					<a href="#find">chrisjacob/jquery</a>
+				</li>
+				<li>
+					<a href="#find">viewsource/archive.jquery</a>
 				</li>
 			</ul>	
 		</div><!-- /content -->
@@ -446,7 +472,7 @@
 				<tr>
 					<td>
 						<div class="ui-grid-a">
-							<div class="ui-block-a"><a href="#" data-role="button" data-theme="b" data-icon="search">Search</a></div>
+							<div class="ui-block-a"><a href="#search_github" data-transition="slideup" data-role="button" data-theme="b" data-icon="search">Search</a></div>
 							<div class="ui-block-b"><a href="#" data-role="button" data-icon="refresh">Refresh</a></div>	   
 						</div>
 					</td>
